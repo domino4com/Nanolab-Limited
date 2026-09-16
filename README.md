@@ -1,3 +1,6 @@
+[![Watch the video](https://youtu.be/2w5mD4_LKXo)](https://youtu.be/2w5mD4_LKXo)
+
+
 # Nanolab Limited
 
 Prepare your ESP32-S3 Arduino code for Nanolab on **macOS or Windows**. You need Python 3.9 or newer and a recent Arduino IDE with your ESP32 board package and sketch libraries installed. Your code must compile for the Nanolab ESP32-S3 board. Wi-Fi and Bluetooth must not be used.
