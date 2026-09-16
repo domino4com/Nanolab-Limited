@@ -4,7 +4,6 @@ import importlib.util
 import io
 import json
 from pathlib import Path
-import shutil
 import sys
 import tempfile
 import unittest
@@ -29,6 +28,7 @@ class PackageTests(unittest.TestCase):
         (self.sketch / 'sketch.yaml').write_text('original: untouched\n', encoding='utf-8')
         library = self.root / 'Libraries with spaces' / 'Custom Library'
         library.mkdir(parents=True)
+        self.library = library
         (library / 'Custom.h').write_text('// local modification: café\n', encoding='utf-8')
         (library / 'LICENSE').write_text('retain this license', encoding='utf-8')
         self.builder = {
@@ -79,7 +79,7 @@ class PackageTests(unittest.TestCase):
             self.assertNotIn('Wire', yaml)
             self.assertEqual(yaml.count('- platform:'), 1)
             library = 'MySketch/data/profile-libraries/01-Custom_Library'
-            self.assertEqual(archive.read(library + '/Custom.h').decode('utf-8'), '// local modification: café\n')
+            self.assertEqual(archive.read(library + '/Custom.h'), (self.library / 'Custom.h').read_bytes())
             self.assertIn(library + '/LICENSE', names)
             relocated = self.root / 'received somewhere else'
             archive.extractall(relocated)
@@ -167,7 +167,7 @@ class DiscoveryTests(unittest.TestCase):
         with patch.object(pack.shutil, 'which', return_value=None):
             candidates = pack.cli_candidates('darwin', Path('/Users/Example'), {})
         self.assertIn('/Applications/arduino-cli', candidates)
-        self.assertIn('/Applications/Arduino IDE.app/Contents/Resources/app/lib/backend/resources/arduino-cli', candidates)
+        self.assertIn(str(Path('/Applications/Arduino IDE.app/Contents/Resources/app/lib/backend/resources/arduino-cli')), candidates)
 
     def test_old_and_broken_candidates_fall_back(self):
         with tempfile.TemporaryDirectory() as td:
