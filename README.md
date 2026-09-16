@@ -1,8 +1,8 @@
 <a href="https://www.youtube.com/watch?v=2w5mD4_LKXo">
   <img
     align="right"
-    width="400"
-    src="https://img.youtube.com/vi/2w5mD4_LKXo/hqdefault.jpg"
+    width="300"
+    src="./YouTube_Logo.svg"
     alt="Watch the video on YouTube"
   />
 </a>
