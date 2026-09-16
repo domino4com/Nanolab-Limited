@@ -85,4 +85,4 @@ Use Arduino IDE's bundled CLI or download the appropriate Windows CLI from [Ardu
 
 ## ZIP is too large to email
 
-The ZIP contains the complete sketch folder and the external libraries actually used, including their license files. Remove unnecessary recordings, datasets, or other non-code files from your original sketch folder and regenerate the package. Keep files that the sketch needs. If the attachment still exceeds your mail provider's limit, contact nanolab@maxiq.space to arrange a transfer.
+Use [WeTransfer](https://wetransfer.com) and send a link to nanolab@maxiq.space.
