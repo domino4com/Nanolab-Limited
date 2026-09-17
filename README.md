@@ -60,6 +60,6 @@ Wait for **“Both builds passed.”** The program prints the ZIP's full path. I
 
 ## Step 3: Send your ZIP
 
-Email the generated **`MySketch.zip`** to **[nanolab@maxiq.space](mailto:nanolab@maxiq.space)**. Send the ZIP printed by the program, which includes your code, libraries, and `sketch.yaml`.
+Email the generated **`MySketch.zip`** to **[nanolab@maxiq.space](mailto:nanolab@maxiq.space)**. Send the ZIP printed by the program, which includes your code, libraries, and `sketch.yaml`. If you are not able to email the file for any reason, then use [WeTransfer](https://wetransfer.com)
 
 If something goes wrong, see [Troubleshooting](docs/TROUBLESHOOTING.md).
